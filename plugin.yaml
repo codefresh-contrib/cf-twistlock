@@ -1,6 +1,6 @@
 image: docker.io/sctechdev/docker-security-scanner
 tag: master-c81e6d4
-version: 2.2
+version: 2.2.0
 description: Execute Twistlock image scan as build step
 keywords:
   - Twistlock
