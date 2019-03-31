@@ -6,13 +6,13 @@ steps:
     type: build
     description: image build step
     dockerfile: Dockerfile
-    image_name: sctechdev/docker-security-scanner
-    tag: latest-cf-build-candidate
+    image_name: codefreshplugins/cf-twistlock
+    tags: [ "latest", "master-c81e6d4" ]
 
   push_image:
     type: push
     candidate: ${{buildimage}}
-    tag: latest
+    tags: [ "latest", "master-c81e6d4" ]
     when:
       branch:
         only:
@@ -20,13 +20,13 @@ steps:
   push_image1:
     type: push
     candidate: ${{buildimage}}
-    tag: ${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}
+    tags: [ "latest", "master-c81e6d4" ]
 
   push_image_nexus_latest:
     title: Push to Nexus Repo (latest)
     type: push
     candidate: ${{buildimage}}
-    tag: latest
+    tags: [ "latest", "master-c81e6d4" ]
     registry: sonatype-docker-internal
     when:
       branch:
@@ -37,5 +37,5 @@ steps:
     title: Push to Nexus Repo (gitbranch + gitsha)
     type: push
     candidate: ${{buildimage}}
-    tag: ${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}
+    tags: [ "latest", "master-c81e6d4" ]
     registry: sonatype-docker-internal
