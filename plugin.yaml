@@ -13,7 +13,6 @@ maintainers:
     email: dev@vanbuskirk.me
   - name: Varun Tagore
     email: rondevops@gmail.com
-icon: A URL to an SVG or PNG image to be used as an icon (optional)
 envs:
   - name: CF_METADATA
     type: required
